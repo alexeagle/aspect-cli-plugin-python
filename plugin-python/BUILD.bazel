@@ -1,0 +1,13 @@
+load("@aspect_rules_py//py:defs.bzl", "py_binary")
+load("@pip//:requirements.bzl", "requirement")
+
+py_binary(
+    name = "plugin",
+    srcs = ["plugin.py"],
+    deps = [
+        "//plugin-python/proto",
+        requirement("grpcio"),
+        requirement("grpcio-health-checking"),
+        requirement("protobuf"),
+    ],
+)

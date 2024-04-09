@@ -1,1 +1,15 @@
 bazel_dep(name = "rules_python", version = "0.31.0")
+bazel_dep(name = "aspect_rules_py", version = "0.7.1")
+
+pip = use_extension("@rules_python//python/extensions:pip.bzl", "pip")
+python = use_extension("@rules_python//python/extensions:python.bzl", "python")
+python.toolchain(
+    python_version = "3.9",
+)
+
+pip.parse(
+    hub_name = "pip",
+    requirements_lock = "//plugin-python:requirements.txt",
+    python_version = "3.9",
+)
+use_repo(pip, "pip")

@@ -1,0 +1,7 @@
+load("@aspect_rules_py//py:defs.bzl", "py_library")
+
+py_library(
+    name = "failure_details",
+    srcs = glob(["*.py"]),
+    visibility = ["//:__subpackages__"],
+)

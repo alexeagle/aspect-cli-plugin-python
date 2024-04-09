@@ -1,0 +1,14 @@
+load("@aspect_rules_py//py:defs.bzl", "py_library")
+
+py_library(
+    name = "buildeventstream",
+    srcs = glob(["*.py"]),
+    deps = [
+        "//plugin-python/cli/core/bazel/action_cache",
+        "//plugin-python/cli/core/bazel/command_line",
+        "//plugin-python/cli/core/bazel/failure_details",
+        "//plugin-python/cli/core/bazel/invocation_policy",
+        "//plugin-python/cli/core/bazel/packages_metrics",
+    ],
+    visibility = ["//:__subpackages__"],
+)
