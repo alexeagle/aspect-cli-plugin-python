@@ -1,4 +1,4 @@
 plugins:
   - name: hello-world
-    from: plugin-python/launch.sh
+    from: plugin-python/plugin.py
     log_level: INFO
