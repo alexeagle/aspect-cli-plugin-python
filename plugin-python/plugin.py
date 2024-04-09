@@ -51,11 +51,7 @@ def serve():
     print("1|3|tcp|127.0.0.1:1234|grpc")
     sys.stdout.flush()
 
-    try:
-        while True:
-            time.sleep(60 * 60 * 24)
-    except KeyboardInterrupt:
-        server.stop(0)
+    server.wait_for_termination()
 
 if __name__ == '__main__':
     serve()

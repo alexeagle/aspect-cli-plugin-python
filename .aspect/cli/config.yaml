@@ -1,4 +1,4 @@
 plugins:
   - name: hello-world
-    from: //plugin-python:plugin
+    from: bazel-bin/plugin-python/plugin
     log_level: INFO
